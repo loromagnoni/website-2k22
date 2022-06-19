@@ -12,9 +12,10 @@ import fs from "fs";
 import yaml from "js-yaml";
 type HomePageProps = {
   coolStuff: CardListItem[];
+  experiences: CardListItem[];
 };
 
-const Home = ({ coolStuff }: HomePageProps) => {
+const Home = ({ coolStuff, experiences }: HomePageProps) => {
   return (
     <div className="relative h-screen w-screen">
       <Head>
@@ -53,16 +54,13 @@ I love reading📘, I think it is the most powerful way to learn from extraordin
 
         <AnimateOnView>
           <Card>
-            <ListCardFiller
-              title="experience"
-              items={[{ title: "Title", url: "", description: "desc" }]}
-            />
+            <ListCardFiller title="Experiences" items={experiences} />
           </Card>
         </AnimateOnView>
 
         <AnimateOnView>
           <Card>
-            <ListCardFiller title="cool" items={coolStuff} />
+            <ListCardFiller title="Cool stuff" items={coolStuff} />
           </Card>
         </AnimateOnView>
       </div>
@@ -78,8 +76,12 @@ export async function getStaticProps() {
   const coolStuff = yaml.load(
     fs.readFileSync("./data/coolStuff.yaml", { encoding: "utf-8" })
   ) as CardListItem[];
+  const experiences = yaml.load(
+    fs.readFileSync("./data/experiences.yaml", { encoding: "utf-8" })
+  ) as CardListItem[];
   return {
     props: {
+      experiences,
       coolStuff,
     },
   };
