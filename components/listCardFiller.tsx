@@ -15,7 +15,7 @@ const container: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 1,
+      delayChildren: 0.5,
       staggerChildren: 0.2,
     },
   },
@@ -38,7 +38,7 @@ export default function ListCardFiller({ title, items }: ListCardFillerProps) {
           <motion.li variants={item} key={i.title}>
             <div className="mb-4">
               <div className="font-medium">{i.title}</div>
-              <div className="text-sm" style={{ color: "#ed34b9" }}>
+              <div className="text-sm shine" style={{ color: "#ed34b9" }}>
                 {i.description}
               </div>
             </div>
