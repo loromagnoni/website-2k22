@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import ShowOnView from "../components/animations/ShowOnView";
+import AnimateOnView from "../components/animations/ShowOnView";
+import textAnimation from "../components/animations/textAnimation";
 import Card from "../components/card";
 import Light from "../components/light";
 import ListCardFiller from "../components/listCardFiller";
@@ -32,34 +33,36 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div className="mt-24">
-        <ShowOnView>
+        <AnimateOnView>
           <Card>
-            <TextCardFiller
-              text={`Determined and enterprising developer from Milan, Italy! 🟩⬜🟥
+            <AnimateOnView variants={textAnimation}>
+              <TextCardFiller
+                text={`Determined and enterprising developer from Milan, Italy! 🟩⬜🟥
 Tech lover👨‍💻 and extremely curious, I always want to learn more from disparate fields: web and mobile development, AI🤖,finance📈, sociology, psychology🧠 and more.
 Frequently thinking about my next journey✈️, next projects and goals🏆.
 I love reading📘, I think it is the most powerful way to learn from extraordinary people, from all over the world (space🌍) and history (time⌛)!,`}
-            />
+              />
+            </AnimateOnView>
           </Card>
-        </ShowOnView>
+        </AnimateOnView>
 
-        <ShowOnView>
+        <AnimateOnView>
           <Card>
             <ListCardFiller
               title="experience"
               items={[{ title: "Title", url: "", description: "desc" }]}
             />
           </Card>
-        </ShowOnView>
+        </AnimateOnView>
 
-        <ShowOnView>
+        <AnimateOnView>
           <Card>
             <ListCardFiller
               title="cool"
               items={[{ title: "Cool", url: "", description: "thing" }]}
             />
           </Card>
-        </ShowOnView>
+        </AnimateOnView>
       </div>
       <div className="my-24">
         <Quote />
