@@ -4,12 +4,17 @@ import AnimateOnView from "../components/animations/ShowOnView";
 import textAnimation from "../components/animations/textAnimation";
 import Card from "../components/card";
 import Light from "../components/light";
-import ListCardFiller from "../components/listCardFiller";
+import ListCardFiller, { CardListItem } from "../components/listCardFiller";
 import Quote from "../components/quote";
 import Socials from "../components/socials";
 import TextCardFiller from "../components/textCardFiller";
+import fs from "fs";
+import yaml from "js-yaml";
+type HomePageProps = {
+  coolStuff: CardListItem[];
+};
 
-const Home: NextPage = () => {
+const Home = ({ coolStuff }: HomePageProps) => {
   return (
     <div className="relative h-screen w-screen">
       <Head>
@@ -57,10 +62,7 @@ I love reading📘, I think it is the most powerful way to learn from extraordin
 
         <AnimateOnView>
           <Card>
-            <ListCardFiller
-              title="cool"
-              items={[{ title: "Cool", url: "", description: "thing" }]}
-            />
+            <ListCardFiller title="cool" items={coolStuff} />
           </Card>
         </AnimateOnView>
       </div>
@@ -71,5 +73,16 @@ I love reading📘, I think it is the most powerful way to learn from extraordin
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const coolStuff = yaml.load(
+    fs.readFileSync("./data/coolStuff.yaml", { encoding: "utf-8" })
+  ) as CardListItem[];
+  return {
+    props: {
+      coolStuff,
+    },
+  };
+}
 
 export default Home;
