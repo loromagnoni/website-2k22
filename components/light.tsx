@@ -1,28 +1,23 @@
 type LightProps = {
   height: number;
   width: number;
-  xTraslation?: string;
+  x?: number;
   r: number;
   g: number;
   b: number;
 };
 
-export default function Light({
-  height,
-  width,
-  r,
-  g,
-  b,
-  xTraslation = "0",
-}: LightProps) {
+export default function Light({ height, width, r, g, b, x = 50 }: LightProps) {
   return (
     <div
       className={`absolute`}
       style={{
-        transform: `translate(${xTraslation},-50%)`,
+        zIndex: -1,
+        transform: "translate(-50%,-50%)",
+        left: `${x}%`,
         height: `${height}rem`,
         width: `${width}rem`,
-        background: `radial-gradient(50% 50% at 50% 50%, rgba(${r}, ${g}, ${b}, 0.2) 0%, rgba(255, 255, 255, 0) 100%)`,
+        background: `radial-gradient(50% 50%, rgba(${r}, ${g}, ${b}, 0.5) 0%, rgba(255, 255, 255, 0) 100%)`,
       }}
     ></div>
   );
