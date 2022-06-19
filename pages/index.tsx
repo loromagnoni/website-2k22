@@ -25,9 +25,12 @@ const Home = ({ coolStuff, experiences }: HomePageProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Light height={20} width={20} r={206} g={17} b={255} />
-      <Light height={35} width={25} r={47} g={79} b={211} x={0} />
-      <Light height={35} width={25} r={17} g={211} b={224} x={100} />
+      <div className="w-screen h-screen absolute overflow-hidden">
+        <Light height={20} width={20} r={206} g={17} b={255} />
+        <Light height={35} width={25} r={47} g={79} b={211} x={0} />
+        <Light height={35} width={25} r={17} g={211} b={224} x={100} />
+      </div>
+
       <div className="tracking-normal ">
         <AnimateOnView variants={titleAnimation}>
           <div className="flex justify-center pt-28 text-2xl ">
