@@ -1,7 +1,9 @@
+import { mdiOpenInNew } from "@mdi/js";
+import Icon from "@mdi/react";
 import { motion, Variants } from "framer-motion";
 import ShowOnView from "./animations/ShowOnView";
 
-export type CardListItem = { title: string; description: string; url: string };
+export type CardListItem = { title: string; description: string; url?: string };
 
 type ListCardFillerProps = {
   title: string;
@@ -15,7 +17,7 @@ const container: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0.5,
+      delayChildren: 1,
       staggerChildren: 0.2,
     },
   },
@@ -38,9 +40,21 @@ export default function ListCardFiller({ title, items }: ListCardFillerProps) {
           <motion.li variants={item} key={i.title}>
             <div className="mb-4">
               <div className="font-medium">{i.title}</div>
-              <div className="text-sm shine" style={{ color: "#ed34b9" }}>
-                {i.description}
-              </div>
+              <a href={i.url} rel="noreferrer" target="_blank">
+                {" "}
+                <div className="text-sm shine" style={{ color: "#ed34b9" }}>
+                  {i.description}{" "}
+                  {i.url ? (
+                    <Icon
+                      className="inline mb-[2px]"
+                      path={mdiOpenInNew}
+                      size={0.5}
+                    />
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </a>
             </div>
           </motion.li>
         ))}

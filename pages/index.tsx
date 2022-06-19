@@ -10,6 +10,7 @@ import Socials from "../components/socials";
 import TextCardFiller from "../components/textCardFiller";
 import fs from "fs";
 import yaml from "js-yaml";
+import titleAnimation from "../components/animations/titleAnimation";
 type HomePageProps = {
   coolStuff: CardListItem[];
   experiences: CardListItem[];
@@ -28,25 +29,31 @@ const Home = ({ coolStuff, experiences }: HomePageProps) => {
       <Light height={35} width={25} r={47} g={79} b={211} x={0} />
       <Light height={35} width={25} r={17} g={211} b={224} x={100} />
       <div className="tracking-normal ">
-        <div className="flex justify-center pt-28 text-2xl ">
-          Lorenzo Romagnoni
-        </div>
-        <div className="font-medium text-center text-zinc-400 leading-7 text-lg mt-3 mx-10">
-          web software engineer at{" "}
-          <span style={{ color: "#ed34b9" }}>Bending&nbsp;Spoons</span>
-          <br></br>
-          previously at <span style={{ color: "#ed34b9" }}>tutored</span>
-        </div>
+        <AnimateOnView variants={titleAnimation}>
+          <div className="flex justify-center pt-28 text-2xl ">
+            Lorenzo Romagnoni
+          </div>
+        </AnimateOnView>
+        <AnimateOnView variants={titleAnimation} additionalDelay={0.1}>
+          <div className="font-medium text-center text-zinc-400 leading-7 text-lg mt-3 mx-10">
+            web software engineer at{" "}
+            <span style={{ color: "#ed34b9" }}>Bending&nbsp;Spoons</span>
+            <br></br>
+            previously at <span style={{ color: "#ed34b9" }}>tutored</span>
+          </div>
+        </AnimateOnView>
       </div>
+
       <div className="mt-24">
-        <AnimateOnView>
-          <Card>
+        <AnimateOnView additionalDelay={0.2}>
+          <Card backgroundUrl="images/card-background.jpg">
             <AnimateOnView variants={textAnimation}>
               <TextCardFiller
-                text={`Determined and enterprising developer from Milan, Italy! 🟩⬜🟥
-Tech lover👨‍💻 and extremely curious, I always want to learn more from disparate fields: web and mobile development, AI🤖,finance📈, sociology, psychology🧠 and more.
-Frequently thinking about my next journey✈️, next projects and goals🏆.
-I love reading📘, I think it is the most powerful way to learn from extraordinary people, from all over the world (space🌍) and history (time⌛)!,`}
+                paragraphs={[
+                  "Inquisitive and pushing software lover",
+                  "Fascined by cognitivism and finance",
+                  "Engineering approach with focus on business oriented metrics and processes",
+                ]}
               />
             </AnimateOnView>
           </Card>
@@ -64,9 +71,7 @@ I love reading📘, I think it is the most powerful way to learn from extraordin
           </Card>
         </AnimateOnView>
       </div>
-      <div className="my-24">
-        <Quote />
-      </div>
+      <Quote />
       <Socials />
     </div>
   );

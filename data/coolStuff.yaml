@@ -1,16 +1,12 @@
-- title: "Cool baby"
-  description: "A really cool baby"
-- title: "Cool baby 1"
-  description: "A really cool baby"
-- title: "Cool baby 2"
-  description: "A really cool baby"
-- title: "Cool baby 3"
-  description: "A really cool baby"
-- title: "Cool baby 4"
-  description: "A really cool baby"
-- title: "Cool baby 5"
-  description: "A really cool baby"
-- title: "Cool baby 6"
-  description: "A really cool baby"
-- title: "Cool baby 7"
-  description: "A really cool baby"
+- title: "UAF 220K€ investment"
+  description: "Startup with digital platform developed by us gets funded"
+  url: https://www.linkedin.com/feed/update/urn:li:activity:6937415602353393664/
+- title: "Sorint Hackaton Winner"
+  description: "Won 2021 Sorint Hackaton prize for the most innovative idea"
+  url: https://www.youtube.com/watch?v=AtaYDLp6YrM
+- title: "Speaker at Google Developer Student Club PoliMi"
+  description: "Sponsored by Tutored, explaining Flutter mobile application development process"
+  url: https://www.youtube.com/watch?v=sns41hmIRBw
+- title: "Speaker at Tutored 'Master Flutter' experience series"
+  description: "Organized presentation, demo prototype and competition assignment"
+  url: https://www.tutored.me/experiences/12536
