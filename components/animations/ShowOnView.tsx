@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import useOnView from "../../hooks/useOnView";
 
 type ShowOnViewProps = {
-  children: JSX.Element;
+  children: JSX.Element[] | JSX.Element;
   variants?: Variants;
 };
 
@@ -25,20 +25,20 @@ export default function ShowOnView({
   variants = defaultVariants,
 }: ShowOnViewProps) {
   const controls = useAnimation();
-  const [ref, inView] = useOnView({ threshold: 0.7 });
+  const [ref, inView] = useOnView({ threshold: 0.5 });
   useEffect(() => {
     if (inView) {
       controls.start("visible");
     }
   }, [controls, inView]);
   return (
-    <motion.div
+    <motion.ol
       variants={variants}
       animate={controls}
       initial="hidden"
       ref={ref}
     >
       {children}
-    </motion.div>
+    </motion.ol>
   );
 }

@@ -4,7 +4,11 @@ const textAnimation: Variants = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: 1, ease: "easeInOut" },
+    transition: {
+      duration: 0.5,
+      delay: 1,
+      ease: "easeInOut",
+    },
   },
   hidden: {
     y: 5,
