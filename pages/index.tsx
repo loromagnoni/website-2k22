@@ -42,7 +42,7 @@ const Home = ({ coolStuff, experiences }: HomePageProps) => {
             web software engineer at{" "}
             <span style={{ color: "#ed34b9" }}>Bending&nbsp;Spoons</span>
             <br></br>
-            previously at <span style={{ color: "#ed34b9" }}>tutored</span>
+            previously at <span style={{ color: "#ed34b9" }}>Tutored</span>
           </div>
         </AnimateOnView>
       </div>
