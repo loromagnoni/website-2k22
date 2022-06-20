@@ -37,7 +37,7 @@ export default function ListCardFiller({ title, items }: ListCardFillerProps) {
       <div className="text-sm  text-zinc-300 tracking-wide mb-4">{title}</div>
       <ShowOnView variants={container}>
         {items.map((i) => (
-          <motion.li variants={item} key={i.title}>
+          <motion.div variants={item} key={i.title}>
             <div className="mb-4">
               <div className="font-medium">{i.title}</div>
               <a href={i.url} rel="noreferrer" target="_blank">
@@ -56,7 +56,7 @@ export default function ListCardFiller({ title, items }: ListCardFillerProps) {
                 </div>
               </a>
             </div>
-          </motion.li>
+          </motion.div>
         ))}
       </ShowOnView>
     </div>

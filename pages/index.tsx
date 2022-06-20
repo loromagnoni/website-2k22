@@ -48,31 +48,34 @@ const Home = ({ coolStuff, experiences }: HomePageProps) => {
       </div>
 
       <div className="mt-24">
-        <AnimateOnView additionalDelay={0.2}>
-          <Card backgroundUrl="images/card-background.jpg">
-            <AnimateOnView variants={textAnimation}>
-              <TextCardFiller
-                paragraphs={[
-                  "Inquisitive and pushing software lover",
-                  "Fascined by cognitivism and finance",
-                  "Engineering approach with focus on business oriented metrics and processes",
-                ]}
-              />
-            </AnimateOnView>
-          </Card>
-        </AnimateOnView>
+        <div className="flex flex-col sm:flex-row">
+          <AnimateOnView className="sm:flex-1 " additionalDelay={0.2}>
+            <Card backgroundUrl="images/card-background.jpg">
+              <AnimateOnView variants={textAnimation}>
+                <TextCardFiller
+                  paragraphs={[
+                    "Inquisitive and pushing software lover",
+                    "Fascined by cognitivism and finance",
+                    "Engineering approach with focus on business oriented metrics and processes",
+                  ]}
+                />
+              </AnimateOnView>
+            </Card>
+          </AnimateOnView>
 
-        <AnimateOnView>
-          <Card>
-            <ListCardFiller title="Experiences" items={experiences} />
-          </Card>
-        </AnimateOnView>
-
-        <AnimateOnView>
-          <Card>
-            <ListCardFiller title="Cool stuff" items={coolStuff} />
-          </Card>
-        </AnimateOnView>
+          <AnimateOnView className="sm:flex-1">
+            <Card>
+              <ListCardFiller title="Experiences" items={experiences} />
+            </Card>
+          </AnimateOnView>
+        </div>
+        <div className="flex justify-center">
+          <AnimateOnView>
+            <Card>
+              <ListCardFiller title="Cool stuff" items={coolStuff} />
+            </Card>
+          </AnimateOnView>
+        </div>
       </div>
       <Quote />
       <Socials />

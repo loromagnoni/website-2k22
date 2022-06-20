@@ -11,6 +11,7 @@ type ShowOnViewProps = {
   children: JSX.Element[] | JSX.Element;
   variants?: Variants;
   additionalDelay?: number;
+  [x: string]: any;
 };
 
 const defaultVariants: Variants = {
@@ -39,6 +40,7 @@ export default function ShowOnView({
   children,
   variants = defaultVariants,
   additionalDelay = 0,
+  ...rest
 }: ShowOnViewProps) {
   const controls = useAnimation();
   const [ref, inView] = useOnView({ threshold: 0.5 });
@@ -52,13 +54,14 @@ export default function ShowOnView({
     [additionalDelay, variants]
   );
   return (
-    <motion.ol
+    <motion.div
       variants={delayedVariant}
       animate={controls}
       initial="hidden"
       ref={ref}
+      {...rest}
     >
       {children}
-    </motion.ol>
+    </motion.div>
   );
 }
