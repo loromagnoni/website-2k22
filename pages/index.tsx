@@ -39,7 +39,7 @@ const Home = ({ coolStuff, experiences }: HomePageProps) => {
         </AnimateOnView>
         <AnimateOnView variants={titleAnimation} additionalDelay={0.1}>
           <div className="font-medium text-center text-zinc-400 leading-7 text-lg mt-3 mx-10">
-            web software engineer at{" "}
+            Web Software Engineer at{" "}
             <span style={{ color: "#ed34b9" }}>Bending&nbsp;Spoons</span>
             <br></br>
             previously at <span style={{ color: "#ed34b9" }}>Tutored</span>
