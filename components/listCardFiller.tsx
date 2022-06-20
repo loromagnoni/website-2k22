@@ -42,7 +42,7 @@ export default function ListCardFiller({ title, items }: ListCardFillerProps) {
               <div className="font-medium">{i.title}</div>
               <a href={i.url} rel="noreferrer" target="_blank">
                 {" "}
-                <div className="text-sm shine" style={{ color: "#ed34b9" }}>
+                <div className="text-sm shine">
                   {i.description}{" "}
                   {i.url ? (
                     <Icon
