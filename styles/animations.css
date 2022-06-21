@@ -8,7 +8,7 @@
     rgb(254, 202, 255) 50%,
     rgba(237, 53, 185, 1) 60%
   );
-  animation: shine 4s linear infinite;
+  animation: shine 3s linear infinite;
   background-size: 300% 300%;
 }
 
