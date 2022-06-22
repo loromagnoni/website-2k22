@@ -48,6 +48,7 @@ export default function ListCardFiller({ title, items }: ListCardFillerProps) {
                     <Icon
                       className="inline mb-[2px]"
                       path={mdiOpenInNew}
+                      color="white"
                       size={0.5}
                     />
                   ) : (
