@@ -47,9 +47,12 @@ const Home = ({ coolStuff, experiences }: HomePageProps) => {
         </AnimateOnView>
       </div>
 
-      <div className="mt-24">
+      <div className="mt-16 max-w-4xl m-auto">
         <div className="flex flex-col sm:flex-row">
-          <AnimateOnView className="sm:flex-1 " additionalDelay={0.2}>
+          <AnimateOnView
+            className="sm:flex-1   mx-4 my-4"
+            additionalDelay={0.2}
+          >
             <Card backgroundUrl="images/card-background.jpg">
               <AnimateOnView variants={textAnimation}>
                 <TextCardFiller
@@ -63,14 +66,14 @@ const Home = ({ coolStuff, experiences }: HomePageProps) => {
             </Card>
           </AnimateOnView>
 
-          <AnimateOnView className="sm:flex-1">
+          <AnimateOnView className="sm:flex-1  mx-4 my-4">
             <Card>
               <ListCardFiller title="Experiences" items={experiences} />
             </Card>
           </AnimateOnView>
         </div>
-        <div className="flex justify-center">
-          <AnimateOnView>
+        <div className="flex justify-center ">
+          <AnimateOnView className=" mx-4 my-4">
             <Card>
               <ListCardFiller title="Cool stuff" items={coolStuff} />
             </Card>
