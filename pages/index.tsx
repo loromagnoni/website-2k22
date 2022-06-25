@@ -61,6 +61,13 @@ const Home = ({ coolStuff, experiences }: HomePageProps) => {
                     "Fascined by cognitivism and finance",
                     "Engineering approach with focus on business oriented metrics and processes",
                   ]}
+                  highlight={[
+                    "Inquisitive",
+                    "cognitivism",
+                    "Engineering",
+                    "business",
+                    "oriented",
+                  ]}
                 />
               </AnimateOnView>
             </Card>

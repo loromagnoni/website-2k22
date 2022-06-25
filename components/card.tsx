@@ -5,8 +5,11 @@ export default function Card({ children, backgroundUrl }: CardProps) {
     <div
       className="sm:h-96 bg-black text-white rounded-3xl py-8 px-6 bg-cover"
       style={{
-        filter: "saturate(0.6) contrast(1.2)",
-        ...(backgroundUrl && { backgroundImage: `url(${backgroundUrl})` }),
+        ...(backgroundUrl && {
+          backgroundImage: `url(${backgroundUrl})`,
+          backgroundPosition: "right",
+          textShadow: "0 0 10px black, 0 0 5px black",
+        }),
       }}
     >
       {children}
