@@ -33,12 +33,12 @@ const Home = ({ coolStuff, experiences }: HomePageProps) => {
 
       <div className="tracking-normal ">
         <AnimateOnView variants={titleAnimation}>
-          <div className="flex justify-center pt-28 text-2xl ">
+          <div className="font-medium flex justify-center pt-28 text-2xl ">
             Lorenzo Romagnoni
           </div>
         </AnimateOnView>
         <AnimateOnView variants={titleAnimation} additionalDelay={0.1}>
-          <div className="font-medium text-center text-zinc-400 leading-7 text-lg mt-3 mx-10">
+          <div className="font-medium text-center text-zinc-400 leading-7 text-md mt-3 mx-10">
             Web Software Engineer at{" "}
             <span style={{ color: "#ed34b9" }}>Bending&nbsp;Spoons</span>
             <br></br>
