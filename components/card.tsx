@@ -6,9 +6,8 @@ export default function Card({ children, backgroundUrl }: CardProps) {
       className="sm:h-96 bg-black text-white rounded-3xl py-8 px-6 bg-cover"
       style={{
         ...(backgroundUrl && {
+          filter: "saturate(0.5) contrast(1.2)",
           backgroundImage: `url(${backgroundUrl})`,
-          backgroundPosition: "right",
-          textShadow: "0 0 10px black, 0 0 5px black",
         }),
       }}
     >

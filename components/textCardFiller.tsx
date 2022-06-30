@@ -5,7 +5,7 @@ export default function TextCardFiller({
   highlight = [],
 }: TextCardProps) {
   return (
-    <div className="font-medium text-lg pr-10 mb-52">
+    <div className="font-medium text-lg pr-10 ">
       {paragraphs.map((p) => (
         <p className="mb-2" key={p}>
           {p
